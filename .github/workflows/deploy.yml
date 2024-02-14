@@ -11,8 +11,9 @@ jobs:
   test:
     env:
       MONGODB_CLUSTER_ADDRESS: cluster0.ugl3ymj.mongodb.net
-      MONGODB_USERNAME: githubActions
-      MONGODB_PASSWORD: hn3pxSFIgf57eemj
+      # Con la variable "secrets" accedemos a los secretos creados en el repositorio
+      MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
+      MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
       PORT: 8080
     environment: testing
     runs-on: ubuntu-latest
